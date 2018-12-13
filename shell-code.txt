@@ -1,0 +1,16 @@
+#!/bin/bash
+
+  read -p "Enter search term here : " search
+perl -ne '
+    BEGIN{ $pattern = $ARGV[0]; shift; $n=0 }
+    @a=split /:/;
+    if ($a[0] =~ m/$pattern/i or $a[1] =~ m/$pattern/i) {
+      print "$a[0], $a[1],\$$a[2],$a[3],$a[4]\n";
+      $n += 1;
+    }
+    END{ print "Found $n Entry (s).\n" }
+  ' "$search" C:\\Users\\Desktop\\Assignment\\data.csv
+
+
+
+  $SHELL
